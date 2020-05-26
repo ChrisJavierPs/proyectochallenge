@@ -1,0 +1,17 @@
+import React from 'react';
+import PlayList from '../../playlist/components/playlist.js';
+import './Category.css';
+function Category(props){
+    return(
+  <div className="Category">
+      <p className="Category-description">{props.description}</p>
+      <h2 className="Category-title">{props.title}</h2>  
+      <PlayList
+      handleOpenModal = {props.handleOpenModal} 
+      playlist = {props.playlist}
+      /> 
+  </div>
+    )
+}
+
+export default Category;
