@@ -17,7 +17,6 @@ class changePassword extends Component {
       oldPassword: '',
       newPassword: '',
       newPasswordConfirmation:'',
-      success:false
     };
     
   }
@@ -38,9 +37,6 @@ headers: {
     axios.put('http://localhost:3000/users/me/change_password', 
     {oldPassword,newPassword, newPasswordConfirmation}, config)
       .then((result) => {
-        this.setState({
-          success:true
-        });
         alert("Se ha cambiado la contraseña con exito!");
         console.log("SE HA CAMBIADO CON EXITO LA CONTRASEÑA!!");
       }).catch((error) => {
@@ -50,9 +46,6 @@ headers: {
   }
 
   render() {
-    if(this.state.success == true){
-      return <Redirect  to="/LoginUser"/>
-    }
     const {oldPassword, newPassword,newPasswordConfirmation} = this.state;
     return (
 <div className="login-form">
